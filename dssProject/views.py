@@ -53,7 +53,11 @@ def createMantencion(request):
 def uploadFile(request):
     myfile = request.FILES['myfile']
     fs = FileSystemStorage()
-    filename = fs.save(myfile.name, myfile)
+    try:
+        filename = fs.save(myfile.name, myfile)
+    except:
+        print("error")
+        return JsonResponse("error", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     uploaded_file_url = fs.url(filename)
     return render(request,'')
 
