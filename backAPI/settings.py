@@ -34,7 +34,8 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 CORS_ORIGIN_WHITELIST = [
     "https://google.com",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://dss-vct-backend.onrender.com"
 ]
 
 
